@@ -44,8 +44,8 @@ yarn start:dev
 PORT=3000
 USE_MOCK=true
 URL_GINFES=https://homologacao.ginfes.com.br/ServiceGinfesImpl
-CERT_PATH=certificado.pfx
-CERT_PASSWORD=sua_senha
+PATH_PFX=certificado.pfx
+PASS_PFX=senha123
 ```
 
 🧪 Teste com Mock

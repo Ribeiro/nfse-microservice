@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  nfse:
+    build: .
+    container_name: nfse-microservice
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ./certs:/app/certs:ro
+      - ./xml:/app/src/xml:ro

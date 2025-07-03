@@ -9,9 +9,10 @@ import { MockSoapService } from './services/mock-soap.service';
 import { MockAssinaturaService } from './services/mock-assinatura.service';
 import { XsdCacheService } from './services/xsd-cache.service';
 import { TemplateCacheService } from './services/template-cache.service';
+import { HealthController } from '../health/controllers/health.controller';
 
 @Module({
-  controllers: [NfseController],
+  controllers: [NfseController, HealthController],
   providers: [
     Logger,
     CertificadoService,
