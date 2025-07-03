@@ -1,0 +1,66 @@
+<EnviarLoteRpsEnvio xmlns="http://www.ginfes.com.br/servico_enviar_lote_rps_envio_v03.xsd"
+                    xmlns:tipos="http://www.ginfes.com.br/tipos_v03.xsd"
+                    xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <LoteRps Id="lote<%= numeroLote %>">
+    <tipos:NumeroLote><%= numeroLote %></tipos:NumeroLote>
+    <tipos:Cnpj><%= prestadorCnpj %></tipos:Cnpj>
+    <tipos:InscricaoMunicipal><%= inscricaoMunicipal %></tipos:InscricaoMunicipal>
+    <tipos:QuantidadeRps><%= quantidadeRps %></tipos:QuantidadeRps>
+
+    <tipos:ListaRps>
+      <tipos:Rps>
+        <tipos:InfRps>
+          <tipos:IdentificacaoRps>
+            <tipos:Numero><%= numero %></tipos:Numero>
+            <tipos:Serie><%= serie %></tipos:Serie>
+            <tipos:Tipo><%= tipo %></tipos:Tipo>
+          </tipos:IdentificacaoRps>
+
+          <tipos:DataEmissao><%= dataEmissao %></tipos:DataEmissao>
+          <tipos:NaturezaOperacao><%= naturezaOperacao %></tipos:NaturezaOperacao>
+          <tipos:RegimeEspecialTributacao><%= regimeEspecialTributacao %></tipos:RegimeEspecialTributacao>
+          <tipos:OptanteSimplesNacional><%= optanteSimplesNacional %></tipos:OptanteSimplesNacional>
+          <tipos:IncentivadorCultural><%= incentivadorCultural %></tipos:IncentivadorCultural>
+          <tipos:Status>1</tipos:Status>
+
+          <tipos:Servico>
+            <tipos:Valores>
+              <tipos:ValorServicos><%= servico.valorServicos %></tipos:ValorServicos>
+              <tipos:IssRetido>2</tipos:IssRetido> <!-- ou 1, se for o caso -->
+            </tipos:Valores>
+            <tipos:ItemListaServico><%= servico.itemListaServico %></tipos:ItemListaServico>
+            <tipos:CodigoTributacaoMunicipio><%= servico.codigoTributacaoMunicipio %></tipos:CodigoTributacaoMunicipio>
+            <tipos:Discriminacao><%= servico.discriminacao %></tipos:Discriminacao>
+            <tipos:CodigoMunicipio><%= servico.codigoMunicipio %></tipos:CodigoMunicipio>
+          </tipos:Servico>
+
+          <tipos:Prestador>
+            <tipos:Cnpj><%= prestadorCnpj %></tipos:Cnpj>
+            <tipos:InscricaoMunicipal><%= inscricaoMunicipal %></tipos:InscricaoMunicipal>
+          </tipos:Prestador>
+
+          <tipos:Tomador>
+            <tipos:IdentificacaoTomador>
+              <tipos:CpfCnpj>
+                <% if (tomador.cpfCnpj.length === 11) { %>
+                  <tipos:Cpf><%= tomador.cpfCnpj %></tipos:Cpf>
+                <% } else { %>
+                  <tipos:Cnpj><%= tomador.cpfCnpj %></tipos:Cnpj>
+                <% } %>
+              </tipos:CpfCnpj>
+            </tipos:IdentificacaoTomador>
+            <tipos:RazaoSocial><%= tomador.razaoSocial %></tipos:RazaoSocial>
+            <tipos:Endereco>
+              <tipos:Endereco><%= tomador.endereco %></tipos:Endereco>
+              <tipos:Numero><%= tomador.numero %></tipos:Numero>
+            </tipos:Endereco>
+            <tipos:Contato>
+              <tipos:Email><%= tomador.email %></tipos:Email>
+            </tipos:Contato>
+          </tipos:Tomador>
+
+        </tipos:InfRps>
+      </tipos:Rps>
+    </tipos:ListaRps>
+  </LoteRps>
+</EnviarLoteRpsEnvio>

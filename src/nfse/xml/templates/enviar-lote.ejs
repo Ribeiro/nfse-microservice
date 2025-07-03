@@ -1,0 +1,12 @@
+<EnviarLoteRpsEnvio xmlns="http://www.ginfes.com.br/servico_enviar_lote_rps_envio_v03.xsd"
+                    xmlns:tipos="http://www.ginfes.com.br/tipos_v03.xsd">
+  <LoteRps>
+    <tipos:NumeroLote><%= numeroLote %></tipos:NumeroLote>
+    <tipos:Cnpj><%= prestadorCnpj %></tipos:Cnpj>
+    <tipos:InscricaoMunicipal><%= inscricaoMunicipal %></tipos:InscricaoMunicipal>
+    <tipos:QuantidadeRps><%= quantidadeRps %></tipos:QuantidadeRps>
+    <tipos:ListaRps>
+      <%= listaRpsXml %>
+    </tipos:ListaRps>
+  </LoteRps>
+</EnviarLoteRpsEnvio>
